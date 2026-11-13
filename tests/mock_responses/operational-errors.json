@@ -1,0 +1,5 @@
+{
+  "rate_limit": {"code": "rate_limited"},
+  "timeout": {"code": "timeout"},
+  "unavailable": {"code": "unavailable"}
+}
