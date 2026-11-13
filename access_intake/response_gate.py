@@ -110,7 +110,9 @@ def extract_checked(
         "attempted_configuration": dict(configuration),
     }
     try:
-        request = build_request(source) if request_contract is None else request_contract["request"]
+        request = build_request(source) if request_contract is None else {
+            **request_contract["request"], "schema": request_contract["schema"],
+        }
         response = provider.extract(request)
     except AssertionError:
         # Test isolation failures are programming failures, not provider errors.

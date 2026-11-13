@@ -12,6 +12,12 @@ class ProviderError(RuntimeError):
         "rate_limited": "Provider rate limit reached. Explicitly retry the affected attempt later.",
         "timeout": "Provider request timed out. Explicitly retry the affected attempt.",
         "unavailable": "Provider is unavailable. Explicitly retry the affected attempt later.",
+        "provider_error": "Provider could not complete the extraction. Inspect the configured provider/model and explicitly retry.",
+        "invalid_request": "Provider rejected the request. Check endpoint, model and request settings before retrying.",
+        "authentication_error": "Provider authentication failed. Check the API_KEY configuration before retrying.",
+        "permission_denied": "Provider access was denied. Check model and project permissions before retrying.",
+        "quota_exceeded": "Provider quota or credit balance is exhausted. Resolve the account limit before retrying.",
+        "invalid_provider_response": "Provider returned an unusable response envelope. Inspect configuration and explicitly retry.",
     }
 
     def __init__(self, code: str):

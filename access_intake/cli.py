@@ -11,6 +11,7 @@ from .exports import export_generation
 from .intake import intake_jobs, resume_pending, retry_attempt
 from .prompts import EXTRACTION_INSTRUCTIONS, PROMPT_VERSION
 from .providers import MockProvider
+from .openai_provider import DEFAULT_ENDPOINT, HTTPTransport, ResponsesProvider, load_api_key, validate_configuration
 from .review import render_review
 from .sources import load_source
 from .storage import Store
@@ -24,7 +25,12 @@ def _parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
     intake = commands.add_parser("intake", help="Process UTF-8 JSON exports into durable records.")
     intake.add_argument("input", type=Path)
-    intake.add_argument("--provider", choices=("mock",), default="mock")
+    intake.add_argument("--provider", choices=("mock", "openai"), default="mock")
+    intake.add_argument("--model", help="Explicit Responses model ID; facilitator-key access remains unverified.")
+    intake.add_argument("--endpoint", default=DEFAULT_ENDPOINT, help="Full HTTPS Responses API endpoint.")
+    intake.add_argument("--timeout", type=float, default=60, help="Finite provider I/O timeout in seconds (default: 60).")
+    intake.add_argument("--output-limit", type=int, default=4096, help="Maximum output tokens (default: 4096).")
+    intake.add_argument("--temperature", type=float, help="Optional sampling temperature; omit for models that do not support it.")
     intake.add_argument("--mock-responses", type=Path, default=ROOT / "tests/mock_responses")
     intake.add_argument("--mock-script", type=Path, help="Saved JSON list of mock response actions, in sorted input order.")
     queue = commands.add_parser("queue", help="Inspect current completed/latest-failed results.")
@@ -54,33 +60,41 @@ def _intake(arguments, store: Store) -> None:
     paths = sorted(arguments.input.glob("*.json")) if arguments.input.is_dir() else [arguments.input]
     if not paths:
         raise ValueError("no JSON exports found")
-    if arguments.mock_script:
-        script = json.loads(arguments.mock_script.read_text(encoding="utf-8"))
-        if not isinstance(script, list) or len(script) != len(paths):
-            raise ValueError("mock script must contain one action per input export")
-    else:
-        # Fixture selection is a mock transport setting, never extraction logic.
-        script = [{"response": path.name.lower()} for path in paths]
     configuration = {
-        "provider": "mock", "prompt_version": PROMPT_VERSION,
+        "provider": arguments.provider, "prompt_version": PROMPT_VERSION,
         "prompt_sha256": hashlib.sha256(EXTRACTION_INSTRUCTIONS.encode("utf-8")).hexdigest(),
         "schema_sha256": hashlib.sha256((ROOT / "snapshot.schema.json").read_bytes()).hexdigest(),
         "routing_sha256": hashlib.sha256((ROOT / "access_intake/review.py").read_bytes()).hexdigest(),
-        "mock_responses": str(arguments.mock_responses.resolve()),
     }
+    if arguments.provider == "openai":
+        configuration.update(validate_configuration({
+            "model": arguments.model, "endpoint": arguments.endpoint, "timeout": arguments.timeout,
+            "output_limit": arguments.output_limit, "temperature": arguments.temperature,
+        }))
+        script = [None] * len(paths)
+    else:
+        configuration["mock_responses"] = str(arguments.mock_responses.resolve())
+        if arguments.mock_script:
+            script = json.loads(arguments.mock_script.read_text(encoding="utf-8"))
+            if not isinstance(script, list) or len(script) != len(paths):
+                raise ValueError("mock script must contain one action per input export")
+        else:
+            script = [{"response": path.name.lower()} for path in paths]
     policy_hash = hashlib.sha256((ROOT / "materials/office-policy.md").read_bytes()).hexdigest()
     def jobs():
         for path, action in zip(paths, script):
             # Per-document snapshots do not change when batch membership changes.
-            settings = {**configuration, "mock_script": [action]}
-            if "response" in action:
+            settings = dict(configuration)
+            if action is not None:
+                settings["mock_script"] = [action]
+            if action is not None and "response" in action:
                 fixture = (arguments.mock_responses / action["response"]).resolve()
                 if not fixture.is_relative_to(arguments.mock_responses.resolve()):
                     raise ValueError("mock response must be inside the fixture directory")
                 settings["mock_response_sha256"] = hashlib.sha256(fixture.read_bytes()).hexdigest()
             yield load_source(path), settings, policy_hash
 
-    for record in intake_jobs(store, jobs(), _mock_provider, workers=arguments.workers, lease_seconds=arguments.lease_seconds):
+    for record in intake_jobs(store, jobs(), _configured_provider, workers=arguments.workers, lease_seconds=arguments.lease_seconds):
         print(render_review(record), end="")
 
 
@@ -93,6 +107,15 @@ def _mock_provider(configuration):
     return MockProvider(configuration["mock_responses"], script=script)
 
 
+def _configured_provider(configuration):
+    if configuration.get("provider") == "mock":
+        return _mock_provider(configuration)
+    if configuration.get("provider") == "openai":
+        validate_configuration(configuration)
+        return ResponsesProvider(configuration, credential=load_api_key(), transport=HTTPTransport())
+    raise ValueError("unsupported configured provider")
+
+
 def main(argv=None) -> int:
     arguments = _parser().parse_args(argv)
     try:
@@ -101,10 +124,10 @@ def main(argv=None) -> int:
                 _intake(arguments, store)
             elif arguments.command == "retry":
                 archived = store.attempt(arguments.attempt)
-                provider = _mock_provider(archived["configuration"])
+                provider = _configured_provider(archived["configuration"])
                 print(render_review(retry_attempt(store, arguments.attempt, provider)), end="")
             elif arguments.command == "resume":
-                for record in resume_pending(store, _mock_provider, workers=arguments.workers, lease_seconds=arguments.lease_seconds):
+                for record in resume_pending(store, _configured_provider, workers=arguments.workers, lease_seconds=arguments.lease_seconds):
                     print(render_review(record), end="")
             elif arguments.command == "export":
                 print(export_generation(store, arguments.output))
