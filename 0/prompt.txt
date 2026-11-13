@@ -1,0 +1,17 @@
+Use the plan-from-spec skill on planning/spec.md. Write planning/plan.md only; write no code and no tests yet.
+
+---
+
+<send_user_message_question_reply>
+[{"answer":"(1) retain the stated dates (2) retain them (3) clarify","question":"The spec leaves three business rules open. For the plan, what should happen to (1) reversed dates: retain the stated dates or null them; (2) ordinary request facts before an override instruction: retain them or null affected facts; and (3) a withdrawal missing its request ID or request date: clarify or another outcome? I’ll mark these as unresolved in the plan unless you provide the rules.","questionItemId":"[\"request_user_input_async\",\"call_ae7d8c69eeb044b2ae21707ddc078ebc\",0]"}]
+</send_user_message_question_reply>
+
+---
+
+Review the planning/plan.md and correct the following:
+- Every spec line appears in § Coverage with a step that builds it and a test or check that shows it. A spec line Codex left out goes back in.
+- The test plan has its own row for each case of `docs/requirements.md` § Verification: a complete request, missing dates, conflicting details, embedded instructions, provider failure, an unchanged rerun, changed source content. Then the paraphrased request you author, a refusal or interrupted response, and a failed retry after a prior success.
+- Each row's input is a real export in `materials/requests/` (or the message you wrote), and you opened it and read the message.
+- Each expected fact quotes the message words and the policy rule it comes from. Work one row out yourself, from the message and the policy, before you accept Codex's version.
+- Each row's mock response is named: a saved reply under `tests/mock_responses/`, an error, or a cut-off reply. No test calls the real model, and none needs `API_KEY`.
+- The steps put the mock provider first, and each later step names the test written before it.
