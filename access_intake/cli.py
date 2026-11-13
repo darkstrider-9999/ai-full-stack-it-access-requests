@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 from .exports import export_generation
+from .accuracy import read_current_records, render_accuracy, score_accuracy
 from .evaluation import prepare_evaluation, protect_export_destination, protect_intake_state
 from .intake import intake_jobs, resume_pending, retry_attempt
 from .prompts import EXTRACTION_INSTRUCTIONS, PROMPT_VERSION
@@ -52,6 +53,11 @@ def _parser() -> argparse.ArgumentParser:
     export = commands.add_parser("export", help="Publish a consistent extraction/queue generation.",
                                  description="Pin the returned generation directory when reading both files. Top-level readers must retry if generation IDs differ.")
     export.add_argument("--output", type=Path, required=True)
+    accuracy = commands.add_parser("accuracy", help="Compare current records to independent, scoped gold expectations.")
+    accuracy.add_argument("--expected", type=Path, required=True)
+    accuracy.add_argument("--evaluation-state", type=Path, help="Separate paraphrase database; missing evaluation scores zero of twelve fields.")
+    accuracy.add_argument("--json", action="store_true", help="Print machine-readable score and all discrepancies.")
+    accuracy.add_argument("--output", type=Path, help="Write the accuracy report to this path.")
     for command in (inspect, history):
         command.add_argument("--document", required=True)
     for command in (queue, inspect, history):
@@ -61,7 +67,7 @@ def _parser() -> argparse.ArgumentParser:
     for command in (intake, resume, evaluation):
         command.add_argument("--workers", type=int, default=4, help="Maximum concurrent provider calls (default: 4).")
         command.add_argument("--lease-seconds", type=float, default=60, help="Renewed worker lease; interrupted work is reclaimable after expiry.")
-    for command in (intake, queue, inspect, history, retry, resume, export, evaluation):
+    for command in (intake, queue, inspect, history, retry, resume, export, evaluation, accuracy):
         command.add_argument("--state", type=Path, required=True, help="Local SQLite database path.")
     return parser
 
@@ -129,6 +135,21 @@ def _configured_provider(configuration):
 def main(argv=None) -> int:
     arguments = _parser().parse_args(argv)
     try:
+        if arguments.command == "accuracy":
+            gold = json.loads(arguments.expected.read_text(encoding="utf-8"))
+            observations = {"submission": read_current_records(arguments.state),
+                            "paraphrase": read_current_records(arguments.evaluation_state) if arguments.evaluation_state else []}
+            report = score_accuracy(gold, observations)
+            report["state_inputs"] = {"submission": str(arguments.state.resolve()),
+                                      "paraphrase": str(arguments.evaluation_state.resolve()) if arguments.evaluation_state else None}
+            rendered = json.dumps(report, indent=2, ensure_ascii=False) + "\n" if arguments.json else render_accuracy(report)
+            if arguments.output:
+                arguments.output.parent.mkdir(parents=True, exist_ok=True)
+                arguments.output.write_text(rendered, encoding="utf-8")
+                print(f"Accuracy report: {arguments.output}; {report['scalar_score']['matched']} / 252 scalar matches; human gold review: {report['gold_review']['status']}")
+            else:
+                print(rendered, end="")
+            return 0
         # Reject conflicting destinations before Store can initialize any files.
         if arguments.command == "evaluate-paraphrase":
             prepare_evaluation(arguments.input, arguments.state, arguments.output)
