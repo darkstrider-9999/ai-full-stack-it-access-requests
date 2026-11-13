@@ -1,0 +1,422 @@
+{
+  "note": "Authored Responses API envelopes and HTTP failures. These are fake transport observations; fixture model IDs establish no model availability.",
+  "cases": {
+    "http_400": {
+      "status_code": 400,
+      "body": {
+        "error": {
+          "message": "raw private provider detail dummy-test-secret",
+          "type": "fixture_error",
+          "code": "fixture_error"
+        }
+      }
+    },
+    "http_401": {
+      "status_code": 401,
+      "body": {
+        "error": {
+          "message": "raw private provider detail dummy-test-secret",
+          "type": "fixture_error",
+          "code": "fixture_error"
+        }
+      }
+    },
+    "http_403": {
+      "status_code": 403,
+      "body": {
+        "error": {
+          "message": "raw private provider detail dummy-test-secret",
+          "type": "fixture_error",
+          "code": "fixture_error"
+        }
+      }
+    },
+    "http_429": {
+      "status_code": 429,
+      "body": {
+        "error": {
+          "message": "raw private provider detail dummy-test-secret",
+          "type": "rate_limit_error",
+          "code": "rate_limit_exceeded"
+        }
+      }
+    },
+    "http_500": {
+      "status_code": 500,
+      "body": {
+        "error": {
+          "message": "raw private provider detail dummy-test-secret",
+          "type": "fixture_error",
+          "code": "fixture_error"
+        }
+      }
+    },
+    "http_503": {
+      "status_code": 503,
+      "body": {
+        "error": {
+          "message": "raw private provider detail dummy-test-secret",
+          "type": "fixture_error",
+          "code": "fixture_error"
+        }
+      }
+    },
+    "cancelled": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "cancelled",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "queued": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "queued",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "in_progress": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "in_progress",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "unknown_status": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "unexpected_status",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "missing_status": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "missing_model": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "completed",
+        "error": null,
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "missing_output": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "completed",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null
+      }
+    },
+    "empty_output": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "completed",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null,
+        "output": []
+      }
+    },
+    "wrong_role": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "completed",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "user",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "incomplete_message": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "completed",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "incomplete",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "non_json_body": {
+      "status_code": 200,
+      "raw_body": "not JSON: raw private provider detail dummy-test-secret"
+    },
+    "non_object_body": {
+      "status_code": 200,
+      "body": []
+    },
+    "error_with_text": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "completed",
+        "model": "fixture-returned-model",
+        "error": {
+          "code": "server_error",
+          "message": "raw private provider detail dummy-test-secret"
+        },
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "failed": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "failed",
+        "model": "fixture-returned-model",
+        "error": {
+          "code": "server_error",
+          "message": "raw private provider detail dummy-test-secret"
+        },
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "reasoning_then_text": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "completed",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "reasoning",
+            "id": "rs_fixture",
+            "summary": []
+          },
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "split_text": {
+      "status_code": 200,
+      "body": {
+        "id": "resp_fixture_completed",
+        "object": "response",
+        "status": "completed",
+        "model": "fixture-returned-model",
+        "error": null,
+        "incomplete_details": null,
+        "output": [
+          {
+            "type": "message",
+            "id": "msg_fixture",
+            "status": "completed",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, w",
+                "annotations": []
+              },
+              {
+                "type": "output_text",
+                "text": "ith request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}",
+                "annotations": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

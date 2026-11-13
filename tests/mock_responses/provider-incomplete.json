@@ -1,0 +1,28 @@
+{
+  "status_code": 200,
+  "body": {
+    "id": "resp_fixture_completed",
+    "object": "response",
+    "status": "incomplete",
+    "model": "fixture-returned-model",
+    "error": null,
+    "incomplete_details": {
+      "reason": "max_output_tokens"
+    },
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_fixture",
+        "status": "incomplete",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "{\"request_id\":",
+            "annotations": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "provider": "openai",
+  "api": "Responses",
+  "endpoint": "https://api.openai.com/v1/responses",
+  "model_configuration": "Model ID is required and configurable; fixture IDs are synthetic.",
+  "facilitator_key_model_access": "unverified; no live request or credential lookup performed",
+  "fixture_kind": "authored_fake_http",
+  "reviewed_on": "2026-11-13",
+  "sources": [
+    "https://developers.openai.com/api/reference/resources/responses/methods/create",
+    "https://developers.openai.com/api/docs/guides/structured-outputs",
+    "https://developers.openai.com/api/docs/guides/error-codes",
+    "https://developers.openai.com/api/reference/overview"
+  ],
+  "request_contract": {
+    "method": "POST",
+    "authentication": "HTTP Bearer; production loader uses API_KEY",
+    "configuration_fields": [
+      "model",
+      "endpoint",
+      "timeout",
+      "output_limit",
+      "temperature"
+    ],
+    "output_format": "text.format json_schema; strict true; unchanged supplied schema",
+    "source_placement": "user input_text, separate from trusted instructions",
+    "stream": false,
+    "store": false
+  },
+  "response_contract": {
+    "completion": "Require completed response and completed assistant message before using output_text content.",
+    "refusal": "A refusal content item prevents extraction, including when text accompanies it.",
+    "interruption": "Incomplete/cancelled or still pending output is never treated as completed extraction.",
+    "errors": "HTTP failures and response.error prevent extraction; no implicit retry.",
+    "provenance": "Use observed returned model; no response source is inferred before an envelope is usable."
+  }
+}
