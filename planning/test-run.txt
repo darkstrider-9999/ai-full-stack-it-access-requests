@@ -78,7 +78,7 @@ test_t17_wrong_value_and_each_null_mismatch_lose_one_point (test_t10_accuracy.T1
 test_t18_documented_commands_and_handover_artifacts_are_reviewable (test_t11_handover.T18OperatorHandover.test_t18_documented_commands_and_handover_artifacts_are_reviewable) ... ok
 
 ----------------------------------------------------------------------
-Ran 77 tests in 45.028s
+Ran 77 tests in 41.099s
 
 OK
-{"observation": "T14 mock workload", "messages": 2000, "workers": 4, "peak_active_provider_calls": 4, "elapsed_seconds": 23.972, "configuration": {"provider": "mock", "model": "operational-test", "workers": 4}, "response_source": "mock"}
+{"observation": "T14 mock workload", "messages": 2000, "workers": 4, "peak_active_provider_calls": 4, "elapsed_seconds": 21.589, "configuration": {"provider": "mock", "model": "operational-test", "workers": 4}, "response_source": "mock"}
