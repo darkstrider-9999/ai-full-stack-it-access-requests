@@ -102,9 +102,11 @@ def prepare_review(
     *,
     attempt_id: str,
     configuration: Mapping[str, Any],
+    request_contract: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Run the shared response gate and prepare provenance, routing and evidence."""
-    record = extract_checked(source, provider, attempt_id=attempt_id, configuration=configuration)
+    record = extract_checked(source, provider, attempt_id=attempt_id, configuration=configuration,
+                             request_contract=request_contract)
     record.update(
         document_id=source.document_id,
         source_sha256=source.source_sha256,

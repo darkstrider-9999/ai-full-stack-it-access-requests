@@ -8,10 +8,10 @@ import sys
 from pathlib import Path
 
 from .exports import export_generation
+from .intake import intake_sources, retry_attempt
 from .prompts import EXTRACTION_INSTRUCTIONS, PROMPT_VERSION
 from .providers import MockProvider
-from .review import prepare_review, render_review
-from .sources import load_source
+from .review import render_review
 from .storage import Store
 
 
@@ -29,6 +29,8 @@ def _parser() -> argparse.ArgumentParser:
     queue = commands.add_parser("queue", help="Inspect current completed/latest-failed results.")
     inspect = commands.add_parser("inspect", help="Inspect one current document.")
     history = commands.add_parser("history", help="Inspect archived attempts and source snapshots.")
+    retry = commands.add_parser("retry", help="Replay archived bytes/settings for a named attempt.")
+    retry.add_argument("--attempt", required=True)
     export = commands.add_parser("export", help="Publish a consistent extraction/queue generation.",
                                  description="Pin the returned generation directory when reading both files. Top-level readers must retry if generation IDs differ.")
     export.add_argument("--output", type=Path, required=True)
@@ -36,7 +38,7 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--document", required=True)
     for command in (queue, inspect, history):
         command.add_argument("--json", action="store_true", help="Print machine-readable JSON.")
-    for command in (intake, queue, inspect, history, export):
+    for command in (intake, queue, inspect, history, retry, export):
         command.add_argument("--state", type=Path, required=True, help="Local SQLite database path.")
     return parser
 
@@ -52,20 +54,25 @@ def _intake(arguments, store: Store) -> None:
     else:
         # Fixture selection is a mock transport setting, never extraction logic.
         script = [{"response": path.name.lower()} for path in paths]
-    provider = MockProvider(arguments.mock_responses, script=script)
     configuration = {
         "provider": "mock", "prompt_version": PROMPT_VERSION,
         "prompt_sha256": hashlib.sha256(EXTRACTION_INSTRUCTIONS.encode("utf-8")).hexdigest(),
         "schema_sha256": hashlib.sha256((ROOT / "snapshot.schema.json").read_bytes()).hexdigest(),
         "routing_sha256": hashlib.sha256((ROOT / "access_intake/review.py").read_bytes()).hexdigest(),
-        "mock_responses": str(arguments.mock_responses.resolve()), "mock_script": script,
+        "mock_responses": str(arguments.mock_responses.resolve()),
     }
     policy_hash = hashlib.sha256((ROOT / "materials/office-policy.md").read_bytes()).hexdigest()
-    for path in paths:
-        source = load_source(path)
-        attempt = store.register(source, configuration=configuration, policy_hash=policy_hash)
-        record = prepare_review(source, provider, attempt_id=attempt, configuration=configuration)
-        store.complete(attempt, record)
+    for path, action in zip(paths, script):
+        # Per-document transport snapshots prevent batch omission from changing
+        # a result's fingerprint or shifting a reused document's scripted reply.
+        settings = {**configuration, "mock_script": [action]}
+        if "response" in action:
+            fixture = (arguments.mock_responses / action["response"]).resolve()
+            if not fixture.is_relative_to(arguments.mock_responses.resolve()):
+                raise ValueError("mock response must be inside the fixture directory")
+            settings["mock_response_sha256"] = hashlib.sha256(fixture.read_bytes()).hexdigest()
+        provider = MockProvider(arguments.mock_responses, script=[action])
+        record = intake_sources(store, [path], provider, configuration=settings, policy_hash=policy_hash)[0]
         print(render_review(record), end="")
 
 
@@ -75,6 +82,16 @@ def main(argv=None) -> int:
         with Store(arguments.state) as store:
             if arguments.command == "intake":
                 _intake(arguments, store)
+            elif arguments.command == "retry":
+                archived = store.attempt(arguments.attempt)
+                configuration = archived["configuration"]
+                if configuration.get("provider") != "mock":
+                    raise ValueError("this build supports mock replay only")
+                script = configuration.get("mock_script")
+                if not isinstance(script, list) or len(script) != 1:
+                    raise ValueError("archived replay requires a single-document mock script")
+                provider = MockProvider(configuration["mock_responses"], script=script)
+                print(render_review(retry_attempt(store, arguments.attempt, provider)), end="")
             elif arguments.command == "export":
                 print(export_generation(store, arguments.output))
             elif arguments.command == "history":

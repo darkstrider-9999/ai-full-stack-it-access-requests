@@ -36,7 +36,7 @@ def _reject_constant(value: str) -> None:
     raise ValueError("non-JSON constant")
 
 
-def validate_structure(text: str) -> dict[str, Any]:
+def validate_structure(text: str, *, schema: Mapping[str, Any] | None = None) -> dict[str, Any]:
     """Parse exactly one JSON value and validate the unchanged extraction schema.
 
     This function deliberately does not enforce completeness, date presentation
@@ -46,7 +46,8 @@ def validate_structure(text: str) -> dict[str, Any]:
         value = json.loads(text, parse_constant=_reject_constant)
     except (ValueError, TypeError, RecursionError):
         raise ResponseValidationError("invalid_json", "Response must contain exactly one complete JSON object.") from None
-    if not VALIDATOR.is_valid(value):
+    validator = VALIDATOR if schema is None else Draft202012Validator(schema)
+    if not validator.is_valid(value):
         raise ResponseValidationError("invalid_schema", "Response does not satisfy the extraction schema.")
     return value
 
@@ -92,6 +93,7 @@ def extract_checked(
     *,
     attempt_id: str,
     configuration: Mapping[str, Any],
+    request_contract: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Make one injected provider call and return validated facts or a safe issue.
 
@@ -107,7 +109,8 @@ def extract_checked(
         "attempted_configuration": dict(configuration),
     }
     try:
-        response = provider.extract(build_request(source))
+        request = build_request(source) if request_contract is None else request_contract["request"]
+        response = provider.extract(request)
     except AssertionError:
         # Test isolation failures are programming failures, not provider errors.
         raise
@@ -118,7 +121,8 @@ def extract_checked(
             result["response_source"] = response.get("response_source")
         try:
             _check_completion(response)
-            extraction = validate_structure(response.get("output_text"))
+            schema = None if request_contract is None else request_contract["schema"]
+            extraction = validate_structure(response.get("output_text"), schema=schema)
             _check_dates(extraction)
             _check_grounding(extraction, source.message)
         except ResponseValidationError as error:
