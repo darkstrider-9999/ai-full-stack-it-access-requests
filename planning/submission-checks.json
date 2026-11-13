@@ -1,0 +1,202 @@
+{
+  "audit_completed_at_utc": "2026-11-13T19:54:29.037752+00:00",
+  "scope": "Initial read-only C18\u2013C20 checks from planning/plan.md step 12; not a completed submission.",
+  "repository_url": "https://github.com/darkstrider-9999/ai-full-stack-it-access-requests",
+  "application_commit_inspected": "25b2ba5837e33004b16e2095b3ae5f152bf97f50",
+  "final_submission_commit": null,
+  "C18": {
+    "status": "local_association_verified_facilitator_acceptance_pending",
+    "commit_checkpoint_trailer": "01M7B6KRS73YX4KETEM6N5BYYW",
+    "checkpoint_ref": "refs/entire/checkpoints/YW/01M7B6KRS73YX4KETEM6N5BYYW",
+    "checkpoint_git_object": "7f46bca16e2158a8df15d677ec4094ae6eca06b6",
+    "session_id": "01a1d5d1-d4a2-7731-95c5-159bb4478ca2",
+    "checkpoint_metadata_matches_trailer": true,
+    "nonempty_capture_blobs": {
+      "0/full.jsonl": 3736781,
+      "0/transcript.jsonl": 1398952
+    },
+    "facilitator_capture_instructions": "not supplied; required coverage/redaction/delivery acceptance remains unverified",
+    "evidence_commands": [
+      "git log -1 --format=%B",
+      "entire status --json",
+      "entire session current --json",
+      "entire checkpoint list --json --no-pager",
+      "git ls-tree -r --long 7f46bca16e2158a8df15d677ec4094ae6eca06b6",
+      "git show refs/entire/checkpoints/YW/01M7B6KRS73YX4KETEM6N5BYYW:0/metadata.json"
+    ]
+  },
+  "C19": {
+    "status": "not_delivered",
+    "remote": "origin",
+    "verified_default_branch": "main",
+    "observed_remote_head": "9c54d76afb946c396e1057afd7a30adcdf06ee9f",
+    "local_commits_ahead_of_observed_remote": 25,
+    "candidate_checkpoint_ref_advertised_on_origin": false,
+    "all_required_files_exist_in_local_commit": true,
+    "required_files_missing_from_observed_remote_commit": [
+      "pyproject.toml",
+      "uv.lock",
+      "deliverables/extractions.jsonl",
+      "deliverables/queue.json",
+      "deliverables/accuracy.md",
+      "deliverables/request-evidence.json",
+      "deliverables/verification.md",
+      "planning/test-run.txt"
+    ],
+    "remote_evidence_command": "git ls-remote --symref origin HEAD refs/entire/checkpoints/YW/01M7B6KRS73YX4KETEM6N5BYYW",
+    "remote_result": [
+      "ref: refs/heads/main\tHEAD",
+      "9c54d76afb946c396e1057afd7a30adcdf06ee9f\tHEAD"
+    ],
+    "note": "Application/default-branch delivery and the candidate checkpoint ref are not published. Re-verify after an authorized push; current findings are a point-in-time observation."
+  },
+  "C20": {
+    "status": "assignment_and_receipt_not_supplied_or_verified",
+    "assignment_url": null,
+    "submission_receipt": null,
+    "root_link_to_submit_when_authorized": "https://github.com/darkstrider-9999/ai-full-stack-it-access-requests"
+  },
+  "test_first_ordering": {
+    "verified_pairs": 11,
+    "pairs": [
+      {
+        "test_first": {
+          "commit": "7cb2e032f17cf2fd2dfef22e7a7ba9bd7761765a",
+          "subject": "Test first: Mock provider and isolation"
+        },
+        "implementation": {
+          "commit": "dd563d49a3fce0fe30656666447cfd054b12f606",
+          "subject": "Step 1: Mock provider and isolation"
+        }
+      },
+      {
+        "test_first": {
+          "commit": "9b6b13b81b151596df9f03f7cc03ed1c687c67aa",
+          "subject": "Test first: Input and prompt contract"
+        },
+        "implementation": {
+          "commit": "8bfface1ad0b182101c7cb3fc0dfa3372efce5e2",
+          "subject": "Step 2: Input and prompt contract"
+        }
+      },
+      {
+        "test_first": {
+          "commit": "44cf9ae6f08f6b9937d063077e87c0528653220e",
+          "subject": "Test first: Response gate"
+        },
+        "implementation": {
+          "commit": "5dcb90d1ac922c5a2dbb58383c425eb4c081451d",
+          "subject": "Step 3: Response gate"
+        }
+      },
+      {
+        "test_first": {
+          "commit": "c34cb7589ca2606b8dc0850ffc528317776dff79",
+          "subject": "Test first: Source-grounded extraction contract and ordered routing"
+        },
+        "implementation": {
+          "commit": "562c4363dd8a77536c22c54cc8fbf96d2cbc058d",
+          "subject": "Step 4: Source-grounded extraction contract and ordered routing"
+        }
+      },
+      {
+        "test_first": {
+          "commit": "b08b014732ab065ce8f87d4d6fb8ee50d73f6ebe",
+          "subject": "Test first: Durable current records, queue and history"
+        },
+        "implementation": {
+          "commit": "b745beb2365bb7ae1eb482264a9f50c9738aef6f",
+          "subject": "Step 5: Durable current records, queue and history"
+        }
+      },
+      {
+        "test_first": {
+          "commit": "6ae98ff4d1141609c8d8847d031462d64b82dd7a",
+          "subject": "Test first: Reuse, revisions and explicit replay (stale-completion check already passes)"
+        },
+        "implementation": {
+          "commit": "38e1e5b69d9dc50cd222651cf2c7224928ba64ef",
+          "subject": "Step 6: Reuse, revisions and explicit replay"
+        }
+      },
+      {
+        "test_first": {
+          "commit": "7a317699c4ea65dfa5b57372d839dd26815c0ab6",
+          "subject": "Test first: Partial inspection, overlap and interruption"
+        },
+        "implementation": {
+          "commit": "9424fa99a207374a168a214d3204987d1287363b",
+          "subject": "Step 7: Partial inspection, overlap and interruption"
+        }
+      },
+      {
+        "test_first": {
+          "commit": "6b7ca3c00b28b4329af313cfeba2b65dcd81bd0c",
+          "subject": "Test first: Real provider adapter, with fake transport"
+        },
+        "implementation": {
+          "commit": "c2941ae1a208a5f26158aca2b403bd477870fe1e",
+          "subject": "Step 8: Real provider adapter, with fake transport"
+        }
+      },
+      {
+        "test_first": {
+          "commit": "9bf6c98a8dde1d134b465d8f310a8ab944c0f7b9",
+          "subject": "Test first: Fresh wording"
+        },
+        "implementation": {
+          "commit": "c79ffc6234f15e788a9df35b82e5204aedfa72ae",
+          "subject": "Step 9: Fresh wording"
+        }
+      },
+      {
+        "test_first": {
+          "commit": "d5b1c2e24b20d3330dcdfbcae94ca6a3eab71a35",
+          "subject": "Test first: Accuracy comparison (gold provenance check already passes)"
+        },
+        "implementation": {
+          "commit": "74c42a59f9590646be455d91b2bc857cbcefd86a",
+          "subject": "Step 10: Accuracy comparison"
+        }
+      },
+      {
+        "test_first": {
+          "commit": "7b9adfecd2bdaa0260341b70da12eb0c520000a2",
+          "subject": "Test first: Operator handover and evidence"
+        },
+        "implementation": {
+          "commit": "25b2ba5837e33004b16e2095b3ae5f152bf97f50",
+          "subject": "Step 11: Operator handover and evidence"
+        }
+      }
+    ]
+  },
+  "automated_verification": {
+    "test_count": 77,
+    "result": "OK",
+    "source": "planning/test-run.txt",
+    "sha256": "8951328fb7dea78156e3c2cb25df45e193ceb9f32932afbb58080d795fbda9a2",
+    "note": "Existing committed full-suite result; application code was unchanged during this audit."
+  },
+  "human_reviews": {
+    "requirement_rows_unreviewed": 94,
+    "gold_review": {
+      "status": "pending",
+      "reviewer": null,
+      "note": "A human must review all 252 scalar facts, including clarified B006 and B014, before this is called a complete benchmark."
+    },
+    "note": "No human decisions or requirement marks were supplied or inferred by this audit."
+  },
+  "remaining_actions": [
+    "Have a human inspect and mark requirement evidence and review the draft gold before claiming a complete benchmark.",
+    "Obtain facilitator capture-acceptance and Classroom assignment instructions.",
+    "Obtain explicit submission authorization before pushing or submitting.",
+    "After any further commit, pair the final reviewed submission commit with its actual checkpoint/session and verify remote delivery and the Classroom root-link receipt."
+  ],
+  "performed": {
+    "push": false,
+    "classroom_submission": false,
+    "manual_checkpoint": false,
+    "capture_setup_or_destructive_command": false
+  }
+}
