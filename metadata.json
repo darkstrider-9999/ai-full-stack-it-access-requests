@@ -1,0 +1,56 @@
+{
+  "cli_version": "0.13.2",
+  "checkpoint_id": "01M7B6KRS73YX4KETEM6N5BYYW",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    ".gitignore",
+    "README.md",
+    "deliverables/accuracy.md",
+    "deliverables/current",
+    "deliverables/extractions.jsonl",
+    "deliverables/generations/f84e87a7ddda471e8475c61ea3257516/extractions.jsonl",
+    "deliverables/generations/f84e87a7ddda471e8475c61ea3257516/queue.json",
+    "deliverables/queue.json",
+    "deliverables/verification.md",
+    "planning/test-run.txt",
+    "planning/validation.md"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 8474,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 3079296,
+    "output_tokens": 12715,
+    "api_call_count": 8
+  },
+  "redaction": {
+    "replacements": 22,
+    "layers": {
+      "betterleaks": 3,
+      "connection_string": 0,
+      "credential_key": 0,
+      "credential_value": 7,
+      "credentialed_uri": 4,
+      "entropy": 13,
+      "key_context": 0,
+      "pii": 4,
+      "provider_token": 0,
+      "shell_stdin": 0
+    },
+    "pii": {
+      "EMAIL": 4,
+      "IP": 0,
+      "PHONE": 0
+    }
+  }
+}
