@@ -1,0 +1,5 @@
+{
+  "response_source": "mock",
+  "status": "completed",
+  "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"checking the weekly conversion dashboard with the new event definition changes\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Please log request IT-001, submitted 2026-10-22. I am Maya Chen in Analytics, reporting to Priya Shah. For checking the weekly conversion dashboard with the new event definition changes, I need a new read-only permission for Atlas's staging environment. Please set the window to begin 2026-10-23 and end 2026-11-06.\"], \"issues\": []}"
+}

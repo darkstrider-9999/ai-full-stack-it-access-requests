@@ -1,0 +1,7 @@
+{
+  "export_version": "1.0",
+  "exported_at": "2026-10-22T16:00:00Z",
+  "source_channel": "email",
+  "subject": "Fresh wording evaluation",
+  "message": "Please log request IT-001, submitted 2026-10-22. I am Maya Chen in Analytics, reporting to Priya Shah. For checking the weekly conversion dashboard with the new event definition changes, I need a new read-only permission for Atlas's staging environment. Please set the window to begin 2026-10-23 and end 2026-11-06."
+}
