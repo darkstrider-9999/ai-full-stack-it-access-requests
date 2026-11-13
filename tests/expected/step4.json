@@ -1,0 +1,559 @@
+{
+  "provenance": "B001–B020 expected facts transcribed from planning/plan.md and exact source messages; Q-40/Q-46/Q-49 and user-approved Q-43/Q-51 conventions apply. No measured application output used.",
+  "cases": {
+    "B001": {
+      "facts": {
+        "request_id": "IT-001",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "issue_checks": [],
+      "route": [
+        "review",
+        "System Owner",
+        "review-request"
+      ]
+    },
+    "B002": {
+      "facts": {
+        "request_id": "IT-002",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Owen Reed",
+        "team": "Payments",
+        "system": "Ledger",
+        "environment": "production",
+        "permission": "write",
+        "business_purpose": "We have several settlement entries associated with the wrong reconciliation batch.",
+        "start_date": "2026-10-24",
+        "end_date": "2026-10-25",
+        "manager": "Elena Park"
+      },
+      "issue_checks": [],
+      "route": [
+        "review",
+        "Security Review",
+        "review-risk-then-owner"
+      ]
+    },
+    "B003": {
+      "facts": {
+        "request_id": "IT-003",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Lina Gomez",
+        "team": "Customer Success",
+        "system": "Beacon",
+        "environment": null,
+        "permission": null,
+        "business_purpose": "We are working on the customer renewal review next week.",
+        "start_date": null,
+        "end_date": null,
+        "manager": "Priya Shah"
+      },
+      "issue_checks": [
+        [
+          "missing",
+          "environment"
+        ],
+        [
+          "missing",
+          "permission"
+        ],
+        [
+          "missing",
+          "start_date"
+        ],
+        [
+          "missing",
+          "end_date"
+        ]
+      ],
+      "route": [
+        "needs-information",
+        "IT Service Desk",
+        "clarify"
+      ]
+    },
+    "B004": {
+      "facts": {
+        "request_id": "IT-004",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Theo Malik",
+        "team": "Quality Engineering",
+        "system": "Atlas",
+        "environment": null,
+        "permission": "read",
+        "business_purpose": "I'm trying to understand why the nightly quality report shows different counts from the release checklist.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-10-30",
+        "manager": "Nia Patel"
+      },
+      "issue_checks": [
+        [
+          "conflict",
+          "environment",
+          "staging",
+          "production"
+        ]
+      ],
+      "route": [
+        "needs-information",
+        "IT Service Desk",
+        "clarify"
+      ]
+    },
+    "B005": {
+      "facts": {
+        "request_id": "IT-005",
+        "request_date": "2026-10-22",
+        "kind": "withdrawal",
+        "requester": "Ava Brooks",
+        "team": "Design",
+        "system": null,
+        "environment": null,
+        "permission": null,
+        "business_purpose": "The project that triggered my request has been cancelled so now there is no work for me to do.",
+        "start_date": null,
+        "end_date": null,
+        "manager": "Elena Park"
+      },
+      "issue_checks": [
+        [
+          "missing",
+          "system"
+        ],
+        [
+          "missing",
+          "environment"
+        ],
+        [
+          "missing",
+          "permission"
+        ],
+        [
+          "missing",
+          "start_date"
+        ],
+        [
+          "missing",
+          "end_date"
+        ]
+      ],
+      "route": [
+        "review",
+        "IT Service Desk",
+        "confirm-withdrawal"
+      ]
+    },
+    "B006": {
+      "facts": {
+        "request_id": "IT-006",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Finn Lee",
+        "team": "Platform",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "Need to look at deployment metrics and compare them against release notes before service review.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-10-24",
+        "manager": "Nia Patel"
+      },
+      "issue_checks": [
+        [
+          "instruction-override"
+        ]
+      ],
+      "route": [
+        "review",
+        "IT Service Desk",
+        "inspect-message"
+      ]
+    },
+    "B007": {
+      "facts": {
+        "request_id": "IT-007",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Grace Tan",
+        "team": "Developer Experience",
+        "system": "Forge",
+        "environment": "staging",
+        "permission": "write",
+        "business_purpose": "We're updating starter project templates, so i want to save our changes for the templates.",
+        "start_date": "2026-10-24",
+        "end_date": "2026-10-28",
+        "manager": "Nia Patel"
+      },
+      "issue_checks": [],
+      "route": [
+        "review",
+        "Security Review",
+        "review-risk-then-owner"
+      ]
+    },
+    "B008": {
+      "facts": {
+        "request_id": "IT-008",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Noah Kim",
+        "team": "Finance",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I am trying to check the sample billing total vs forecasting workbook before month end rehearsal.",
+        "start_date": "2026-10-25",
+        "end_date": "2026-10-31",
+        "manager": "Priya Shah"
+      },
+      "issue_checks": [],
+      "route": [
+        "review",
+        "System Owner",
+        "review-request"
+      ]
+    },
+    "B009": {
+      "facts": {
+        "request_id": "IT-009",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Isla Morgan",
+        "team": "Support",
+        "system": "Beacon",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "to go through example support cases before updating our troubleshooting guide (we're missing a few steps new starters have been asking about).",
+        "start_date": "2026-10-26",
+        "end_date": "2026-10-29",
+        "manager": null
+      },
+      "issue_checks": [
+        [
+          "missing",
+          "manager"
+        ]
+      ],
+      "route": [
+        "needs-information",
+        "IT Service Desk",
+        "clarify"
+      ]
+    },
+    "B010": {
+      "facts": {
+        "request_id": "IT-010",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Ben Carter",
+        "team": "Operations",
+        "system": "Ledger",
+        "environment": "production",
+        "permission": "read",
+        "business_purpose": "compare the daily reconciliation report to the entries that the operations folks see",
+        "start_date": "2026-10-27",
+        "end_date": null,
+        "manager": "Elena Park"
+      },
+      "issue_checks": [
+        [
+          "missing",
+          "end_date"
+        ]
+      ],
+      "route": [
+        "needs-information",
+        "IT Service Desk",
+        "clarify"
+      ]
+    },
+    "B011": {
+      "facts": {
+        "request_id": "IT-011",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Zoe Adams",
+        "team": "Research",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I'm looking at sample experiment records to get ready for our team walkthrough.",
+        "start_date": null,
+        "end_date": null,
+        "manager": "Priya Shah"
+      },
+      "issue_checks": [
+        [
+          "unresolved",
+          "relative",
+          "start_date"
+        ],
+        [
+          "unresolved",
+          "relative",
+          "end_date"
+        ]
+      ],
+      "route": [
+        "needs-information",
+        "IT Service Desk",
+        "clarify"
+      ]
+    },
+    "B012": {
+      "facts": {
+        "request_id": "IT-012",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Ravi Shah",
+        "team": "Infrastructure",
+        "system": "Forge",
+        "environment": "staging",
+        "permission": "admin",
+        "business_purpose": "We're doing a configuration migration rehearsal before planning the wider rollout.",
+        "start_date": "2026-10-26",
+        "end_date": "2026-10-27",
+        "manager": "Nia Patel"
+      },
+      "issue_checks": [],
+      "route": [
+        "review",
+        "Security Review",
+        "review-risk-then-owner"
+      ]
+    },
+    "B013": {
+      "facts": {
+        "request_id": "IT-013",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Emma Wilson",
+        "team": "Compliance",
+        "system": "Beacon",
+        "environment": "production",
+        "permission": "read",
+        "business_purpose": "to review account activity records to help with internal audit we have scheduled.",
+        "start_date": "2026-10-28",
+        "end_date": "2026-10-30",
+        "manager": "Elena Park"
+      },
+      "issue_checks": [],
+      "route": [
+        "review",
+        "Security Review",
+        "review-risk-then-owner"
+      ]
+    },
+    "B014": {
+      "facts": {
+        "request_id": "IT-014",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Lucas Brown",
+        "team": "Sales Operations",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I'm giving a demo of the new territory report for sales leads.",
+        "start_date": "2026-11-05",
+        "end_date": "2026-11-02",
+        "manager": "Priya Shah"
+      },
+      "issue_checks": [
+        [
+          "start_date",
+          "after",
+          "end_date"
+        ]
+      ],
+      "route": [
+        "needs-information",
+        "IT Service Desk",
+        "clarify"
+      ]
+    },
+    "B015": {
+      "facts": {
+        "request_id": "IT-015",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Mia Davis",
+        "team": "Learning",
+        "system": "Beacon",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I need to make sure that the sample conversations in the examples I'm building match up to the exercise handout for the Support onboarding workshop.",
+        "start_date": "2026-10-29",
+        "end_date": "2026-10-31",
+        "manager": "Elena Park"
+      },
+      "issue_checks": [],
+      "route": [
+        "review",
+        "System Owner",
+        "review-request"
+      ]
+    },
+    "B016": {
+      "facts": {
+        "request_id": "IT-061",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Alex Turner",
+        "team": "Platform",
+        "system": "Forge",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I am looking at the example pipeline runs to figure out why the starter project takes longer to build some of the time.",
+        "start_date": "2026-10-26",
+        "end_date": "2026-10-28",
+        "manager": "Nia Patel"
+      },
+      "issue_checks": [
+        [
+          "identifier mismatch",
+          "IT-061",
+          "IT-016"
+        ]
+      ],
+      "route": [
+        "needs-information",
+        "IT Service Desk",
+        "clarify"
+      ]
+    },
+    "B017": {
+      "facts": {
+        "request_id": "IT-017",
+        "request_date": "2026-10-22",
+        "kind": "other",
+        "requester": "Chloe Martin",
+        "team": "Communications",
+        "system": null,
+        "environment": null,
+        "permission": null,
+        "business_purpose": "Where can we find the access request form?",
+        "start_date": null,
+        "end_date": null,
+        "manager": null
+      },
+      "issue_checks": [
+        [
+          "missing",
+          "system"
+        ],
+        [
+          "missing",
+          "environment"
+        ],
+        [
+          "missing",
+          "permission"
+        ],
+        [
+          "missing",
+          "start_date"
+        ],
+        [
+          "missing",
+          "end_date"
+        ],
+        [
+          "missing",
+          "manager"
+        ]
+      ],
+      "route": [
+        "needs-information",
+        "IT Service Desk",
+        "clarify"
+      ]
+    },
+    "B018": {
+      "facts": {
+        "request_id": "IT-018",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Daniel Wright",
+        "team": "Data Engineering",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I am reviewing our sample dataset we use during our weekly analyst workshop.",
+        "start_date": "2026-10-27",
+        "end_date": "2026-11-03",
+        "manager": "Priya Shah"
+      },
+      "issue_checks": [],
+      "route": [
+        "review",
+        "System Owner",
+        "review-request"
+      ]
+    },
+    "B019": {
+      "facts": {
+        "request_id": "IT-019",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Sara Ahmed",
+        "team": "Customer Operations",
+        "system": "Beacon",
+        "environment": "production",
+        "permission": "read",
+        "business_purpose": "I am transitioning from updating accounts to reviewing the daily exception report as my colleague will now update the accounts.",
+        "start_date": "2026-10-28",
+        "end_date": "2026-11-04",
+        "manager": "Elena Park"
+      },
+      "issue_checks": [],
+      "route": [
+        "review",
+        "Security Review",
+        "review-risk-then-owner"
+      ]
+    },
+    "B020": {
+      "facts": {
+        "request_id": "IT-020",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Ethan Clark",
+        "team": "Product",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I want to look at some sample usage records before I draft the summary on feature adoption.",
+        "start_date": "2026-10-29",
+        "end_date": "2026-11-02",
+        "manager": null
+      },
+      "issue_checks": [
+        [
+          "conflict",
+          "manager",
+          "Priya Shah",
+          "Elena Park"
+        ]
+      ],
+      "route": [
+        "needs-information",
+        "IT Service Desk",
+        "clarify"
+      ]
+    }
+  }
+}
