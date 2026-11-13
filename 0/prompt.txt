@@ -1,0 +1,7 @@
+continue working
+
+---
+
+<send_user_message_question_reply>
+[{"answer":"Use these conventions","question":"The plan leaves Q-43/Q-51 open. May Step 4 use these stable issue prefixes: `missing <field>`, `conflicting <field>`, `identifier mismatch`, `instruction-override attempt`, `unresolved relative <date-field>`, and `start_date after end_date`? Only the listed clarification conditions would affect routing; any nonempty issues array would not automatically trigger clarification.","questionItemId":"[\"request_user_input_async\",\"call_b78e32b2471948dbb13c665f8b14c3b9\",0]"}]
+</send_user_message_question_reply>

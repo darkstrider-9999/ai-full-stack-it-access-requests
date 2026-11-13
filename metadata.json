@@ -1,0 +1,65 @@
+{
+  "cli_version": "0.13.2",
+  "checkpoint_id": "01M7AYY6V2345XZQJ5P5AM519D",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "tests/expected/step4.json",
+    "tests/mock_responses/it-003.json",
+    "tests/mock_responses/it-004.json",
+    "tests/mock_responses/it-005.json",
+    "tests/mock_responses/it-006.json",
+    "tests/mock_responses/it-007.json",
+    "tests/mock_responses/it-008.json",
+    "tests/mock_responses/it-009.json",
+    "tests/mock_responses/it-010.json",
+    "tests/mock_responses/it-011.json",
+    "tests/mock_responses/it-012.json",
+    "tests/mock_responses/it-013.json",
+    "tests/mock_responses/it-014.json",
+    "tests/mock_responses/it-015.json",
+    "tests/mock_responses/it-016.json",
+    "tests/mock_responses/it-017.json",
+    "tests/mock_responses/it-019.json",
+    "tests/mock_responses/it-020.json",
+    "tests/mock_responses/routing-matrix.json",
+    "tests/test_t04_routing.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 19739,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 787968,
+    "output_tokens": 7509,
+    "api_call_count": 8
+  },
+  "redaction": {
+    "replacements": 0,
+    "layers": {
+      "betterleaks": 0,
+      "connection_string": 0,
+      "credential_key": 0,
+      "credential_value": 0,
+      "credentialed_uri": 0,
+      "entropy": 0,
+      "key_context": 0,
+      "pii": 0,
+      "provider_token": 0,
+      "shell_stdin": 0
+    },
+    "pii": {
+      "EMAIL": 0,
+      "IP": 0,
+      "PHONE": 0
+    }
+  }
+}
