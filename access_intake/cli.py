@@ -8,10 +8,11 @@ import sys
 from pathlib import Path
 
 from .exports import export_generation
-from .intake import intake_sources, retry_attempt
+from .intake import intake_jobs, resume_pending, retry_attempt
 from .prompts import EXTRACTION_INSTRUCTIONS, PROMPT_VERSION
 from .providers import MockProvider
 from .review import render_review
+from .sources import load_source
 from .storage import Store
 
 
@@ -31,6 +32,7 @@ def _parser() -> argparse.ArgumentParser:
     history = commands.add_parser("history", help="Inspect archived attempts and source snapshots.")
     retry = commands.add_parser("retry", help="Replay archived bytes/settings for a named attempt.")
     retry.add_argument("--attempt", required=True)
+    resume = commands.add_parser("resume", help="Resume pending work or reclaim expired worker leases.")
     export = commands.add_parser("export", help="Publish a consistent extraction/queue generation.",
                                  description="Pin the returned generation directory when reading both files. Top-level readers must retry if generation IDs differ.")
     export.add_argument("--output", type=Path, required=True)
@@ -38,7 +40,12 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--document", required=True)
     for command in (queue, inspect, history):
         command.add_argument("--json", action="store_true", help="Print machine-readable JSON.")
-    for command in (intake, queue, inspect, history, retry, export):
+    for command in (queue, inspect):
+        command.add_argument("--include-pending", action="store_true", help="Show unfinished attempts and label earlier results.")
+    for command in (intake, resume):
+        command.add_argument("--workers", type=int, default=4, help="Maximum concurrent provider calls (default: 4).")
+        command.add_argument("--lease-seconds", type=float, default=60, help="Renewed worker lease; interrupted work is reclaimable after expiry.")
+    for command in (intake, queue, inspect, history, retry, resume, export):
         command.add_argument("--state", type=Path, required=True, help="Local SQLite database path.")
     return parser
 
@@ -62,18 +69,28 @@ def _intake(arguments, store: Store) -> None:
         "mock_responses": str(arguments.mock_responses.resolve()),
     }
     policy_hash = hashlib.sha256((ROOT / "materials/office-policy.md").read_bytes()).hexdigest()
-    for path, action in zip(paths, script):
-        # Per-document transport snapshots prevent batch omission from changing
-        # a result's fingerprint or shifting a reused document's scripted reply.
-        settings = {**configuration, "mock_script": [action]}
-        if "response" in action:
-            fixture = (arguments.mock_responses / action["response"]).resolve()
-            if not fixture.is_relative_to(arguments.mock_responses.resolve()):
-                raise ValueError("mock response must be inside the fixture directory")
-            settings["mock_response_sha256"] = hashlib.sha256(fixture.read_bytes()).hexdigest()
-        provider = MockProvider(arguments.mock_responses, script=[action])
-        record = intake_sources(store, [path], provider, configuration=settings, policy_hash=policy_hash)[0]
+    def jobs():
+        for path, action in zip(paths, script):
+            # Per-document snapshots do not change when batch membership changes.
+            settings = {**configuration, "mock_script": [action]}
+            if "response" in action:
+                fixture = (arguments.mock_responses / action["response"]).resolve()
+                if not fixture.is_relative_to(arguments.mock_responses.resolve()):
+                    raise ValueError("mock response must be inside the fixture directory")
+                settings["mock_response_sha256"] = hashlib.sha256(fixture.read_bytes()).hexdigest()
+            yield load_source(path), settings, policy_hash
+
+    for record in intake_jobs(store, jobs(), _mock_provider, workers=arguments.workers, lease_seconds=arguments.lease_seconds):
         print(render_review(record), end="")
+
+
+def _mock_provider(configuration):
+    if configuration.get("provider") != "mock":
+        raise ValueError("this build supports mock recovery only")
+    script = configuration.get("mock_script")
+    if not isinstance(script, list) or len(script) != 1:
+        raise ValueError("archived recovery requires a single-document mock script")
+    return MockProvider(configuration["mock_responses"], script=script)
 
 
 def main(argv=None) -> int:
@@ -84,14 +101,11 @@ def main(argv=None) -> int:
                 _intake(arguments, store)
             elif arguments.command == "retry":
                 archived = store.attempt(arguments.attempt)
-                configuration = archived["configuration"]
-                if configuration.get("provider") != "mock":
-                    raise ValueError("this build supports mock replay only")
-                script = configuration.get("mock_script")
-                if not isinstance(script, list) or len(script) != 1:
-                    raise ValueError("archived replay requires a single-document mock script")
-                provider = MockProvider(configuration["mock_responses"], script=script)
+                provider = _mock_provider(archived["configuration"])
                 print(render_review(retry_attempt(store, arguments.attempt, provider)), end="")
+            elif arguments.command == "resume":
+                for record in resume_pending(store, _mock_provider, workers=arguments.workers, lease_seconds=arguments.lease_seconds):
+                    print(render_review(record), end="")
             elif arguments.command == "export":
                 print(export_generation(store, arguments.output))
             elif arguments.command == "history":
@@ -109,7 +123,7 @@ def main(argv=None) -> int:
                         if row["result"] is not None:
                             print(render_review(row["result"]), end="")
             else:
-                records = store.current_records()
+                records = store.current_records(include_pending=arguments.include_pending)
                 if arguments.command == "inspect":
                     records = [record for record in records if record["document_id"] == arguments.document]
                     if not records:

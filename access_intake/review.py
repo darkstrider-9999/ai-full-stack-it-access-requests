@@ -141,6 +141,10 @@ def render_review(record: Mapping[str, Any]) -> str:
         f"Next action: {record['next_action']}",
         record["review_guidance"],
     ]
+    if "processing_state" in record:
+        lines.append(f"Processing state: {record['processing_state']}")
+    if "version_label" in record:
+        lines.append(f"Version: {record['version_label']}")
     extraction = record["extraction"]
     if extraction is not None:
         lines.append("Extracted facts:")
@@ -156,4 +160,7 @@ def render_review(record: Mapping[str, Any]) -> str:
         lines.append(f"{error['code']}: {error['description']}")
         if "replay_command" in error:
             lines.append(error["replay_command"])
+    if record.get("previous_result") is not None:
+        lines.append("Earlier result (belongs to its earlier attempt/source version):")
+        lines.append(render_review(record["previous_result"]))
     return "\n".join(lines) + "\n"

@@ -2,8 +2,23 @@
 import json
 from collections.abc import Iterable, Mapping
 from pathlib import Path
-from threading import Lock
+from threading import Lock, local
 from typing import Any
+
+
+class ProviderError(RuntimeError):
+    """A classified provider failure; descriptions come from safe local text."""
+    DESCRIPTIONS = {
+        "rate_limited": "Provider rate limit reached. Explicitly retry the affected attempt later.",
+        "timeout": "Provider request timed out. Explicitly retry the affected attempt.",
+        "unavailable": "Provider is unavailable. Explicitly retry the affected attempt later.",
+    }
+
+    def __init__(self, code: str):
+        if code not in self.DESCRIPTIONS:
+            raise ValueError("unknown provider error category")
+        self.code = code
+        super().__init__(self.DESCRIPTIONS[code])
 
 
 class MockProvider:
@@ -25,6 +40,31 @@ class MockProvider:
         self._script = tuple(dict(action) for action in script)
         self._lock = Lock()
         self._call_count = 0
+        self._next_action = 0
+        self._reserved = local()
+
+    def _take_action(self):
+        index = self._next_action
+        self._next_action += 1
+        if index >= len(self._script):
+            return {"error": RuntimeError("mock provider script exhausted")}
+        return self._script[index]
+
+    def reserve(self):
+        """Reserve script order before dispatch, preserving subclass observers."""
+        with self._lock:
+            action = self._take_action()
+        parent = self
+
+        class ReservedCall:
+            def extract(self, request):
+                parent._reserved.action = action
+                try:
+                    return parent.extract(request)
+                finally:
+                    del parent._reserved.action
+
+        return ReservedCall()
 
     @property
     def call_count(self) -> int:
@@ -39,11 +79,8 @@ class MockProvider:
         live provider. Response parsing/validation belongs to the response gate.
         """
         with self._lock:
-            index = self._call_count
             self._call_count += 1
-            if index >= len(self._script):
-                raise RuntimeError("mock provider script exhausted")
-            action = self._script[index]
+            action = self._reserved.action if hasattr(self._reserved, "action") else self._take_action()
 
         if "entered" in action:
             action["entered"].set()

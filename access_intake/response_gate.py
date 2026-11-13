@@ -9,6 +9,7 @@ from jsonschema import Draft202012Validator
 
 from .prompts import build_request
 from .sources import Source
+from .providers import ProviderError
 
 
 SCHEMA = json.loads((Path(__file__).resolve().parents[1] / "snapshot.schema.json").read_text(encoding="utf-8"))
@@ -114,6 +115,10 @@ def extract_checked(
     except AssertionError:
         # Test isolation failures are programming failures, not provider errors.
         raise
+    except ProviderError as error:
+        failure = ResponseValidationError(error.code, ProviderError.DESCRIPTIONS[error.code])
+    except TimeoutError:
+        failure = ResponseValidationError("timeout", ProviderError.DESCRIPTIONS["timeout"])
     except Exception:
         failure = ResponseValidationError("provider_error", "Provider request failed. Inspect the attempted configuration and explicitly retry this attempt.")
     else:
