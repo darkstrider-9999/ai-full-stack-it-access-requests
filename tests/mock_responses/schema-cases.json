@@ -1,0 +1,759 @@
+{
+  "note": "Authored B001 mutations for T03; structural validity is not source accuracy.",
+  "cases": {
+    "malformed": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{broken}"
+    },
+    "partial": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\":"
+    },
+    "prose": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "Here is the extraction: {\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "fenced": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "```json\n{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}\n```"
+    },
+    "two_objects": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}\n{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "trailing_prose": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []} Finished."
+    },
+    "nan": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": NaN, \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "array_root": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "[]"
+    },
+    "null_root": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "null"
+    },
+    "string_root": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "\"text\""
+    },
+    "number_root": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "1"
+    },
+    "bool_root": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "true"
+    },
+    "extra_key": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": [], \"approved\": true}"
+    },
+    "missing_request_id": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_request_date": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_kind": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_requester": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_team": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_system": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_environment": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_permission": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_business_purpose": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_start_date": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_end_date": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_manager": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_supporting_quotes": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"issues\": []}"
+    },
+    "missing_issues": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"]}"
+    },
+    "type_request_id_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": 7, \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_request_id_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": 1.5, \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_request_id_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": true, \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_request_id_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": [], \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_request_id_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": {}, \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_request_id": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": null, \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_request_date_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": 7, \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_request_date_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": 1.5, \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_request_date_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": true, \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_request_date_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": [], \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_request_date_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": {}, \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_request_date": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": null, \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_kind_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": 7, \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_kind_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": 1.5, \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_kind_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": true, \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_kind_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": [], \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_kind_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": {}, \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_kind": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": null, \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_requester_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": 7, \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_requester_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": 1.5, \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_requester_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": true, \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_requester_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": [], \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_requester_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": {}, \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_requester": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": null, \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_team_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": 7, \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_team_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": 1.5, \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_team_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": true, \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_team_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": [], \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_team_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": {}, \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_team": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": null, \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_system_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": 7, \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_system_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": 1.5, \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_system_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": true, \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_system_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": [], \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_system_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": {}, \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_system": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": null, \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_environment_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": 7, \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_environment_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": 1.5, \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_environment_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": true, \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_environment_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": [], \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_environment_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": {}, \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_environment": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": null, \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_permission_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": 7, \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_permission_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": 1.5, \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_permission_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": true, \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_permission_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": [], \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_permission_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": {}, \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_permission": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": null, \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_business_purpose_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": 7, \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_business_purpose_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": 1.5, \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_business_purpose_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": true, \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_business_purpose_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": [], \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_business_purpose_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": {}, \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_business_purpose": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": null, \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_start_date_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": 7, \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_start_date_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": 1.5, \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_start_date_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": true, \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_start_date_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": [], \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_start_date_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": {}, \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_start_date": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": null, \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_end_date_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": 7, \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_end_date_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": 1.5, \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_end_date_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": true, \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_end_date_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": [], \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_end_date_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": {}, \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_end_date": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": null, \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_manager_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": 7, \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_manager_float": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": 1.5, \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_manager_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": true, \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_manager_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": [], \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "type_manager_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": {}, \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_null_manager": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": null, \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "enum_kind": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"unsupported-enum\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_kind_0": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_kind_1": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"change\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_kind_2": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"withdrawal\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_kind_3": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"other\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_kind_4": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": null, \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "enum_environment": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"unsupported-enum\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_environment_0": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_environment_1": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"production\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_environment_2": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": null, \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "enum_permission": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"unsupported-enum\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_permission_0": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_permission_1": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"write\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_permission_2": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"admin\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "valid_permission_3": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": null, \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "array_type_supporting_quotes_null": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": null, \"issues\": []}"
+    },
+    "array_type_supporting_quotes_string": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": \"text\", \"issues\": []}"
+    },
+    "array_type_supporting_quotes_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": 7, \"issues\": []}"
+    },
+    "array_type_supporting_quotes_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": true, \"issues\": []}"
+    },
+    "array_type_supporting_quotes_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": {}, \"issues\": []}"
+    },
+    "array_item_supporting_quotes_null": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [null], \"issues\": []}"
+    },
+    "array_item_supporting_quotes_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [7], \"issues\": []}"
+    },
+    "array_item_supporting_quotes_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [true], \"issues\": []}"
+    },
+    "array_item_supporting_quotes_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [[]], \"issues\": []}"
+    },
+    "array_item_supporting_quotes_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [{}], \"issues\": []}"
+    },
+    "array_type_issues_null": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": null}"
+    },
+    "array_type_issues_string": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": \"text\"}"
+    },
+    "array_type_issues_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": 7}"
+    },
+    "array_type_issues_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": true}"
+    },
+    "array_type_issues_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": {}}"
+    },
+    "array_item_issues_null": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": [null]}"
+    },
+    "array_item_issues_integer": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": [7]}"
+    },
+    "array_item_issues_boolean": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": [true]}"
+    },
+    "array_item_issues_array": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": [[]]}"
+    },
+    "array_item_issues_object": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": [{}]}"
+    },
+    "valid_all_null": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": null, \"request_date\": null, \"kind\": null, \"requester\": null, \"team\": null, \"system\": null, \"environment\": null, \"permission\": null, \"business_purpose\": null, \"start_date\": null, \"end_date\": null, \"manager\": null, \"supporting_quotes\": [], \"issues\": []}"
+    },
+    "valid_empty_arrays": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [], \"issues\": []}"
+    },
+    "valid_issue_strings": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": [\"missing end_date\"]}"
+    },
+    "date_request_date_unpadded": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-1-2\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_request_date_slash": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026/10/22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_request_date_datetime": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22T00:00:00Z\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_request_date_relative": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"tomorrow\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_start_date_unpadded": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-1-2\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_start_date_slash": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026/10/22\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_start_date_datetime": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-22T00:00:00Z\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_start_date_relative": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"tomorrow\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_end_date_unpadded": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-1-2\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_end_date_slash": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026/10/22\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_end_date_datetime": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-10-22T00:00:00Z\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "date_end_date_relative": {
+      "response_source": "mock",
+      "status": "completed",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"tomorrow\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "missing_status": {
+      "response_source": "mock",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    },
+    "unknown_status": {
+      "response_source": "mock",
+      "status": "mystery",
+      "output_text": "{\"request_id\": \"IT-001\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Maya Chen from Analytics here, with request IT-001 dated 2026-10-22. Can I get new read access on Atlas in staging from 2026-10-23 to 2026-11-06? My manager is Priya Shah. I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle). The sample records are already loaded, and I need to check the totals against our spreadsheet. Once I'm done with checking, I'll be sending out any discrepancies to the dashboard owner.\"], \"issues\": []}"
+    }
+  }
+}
