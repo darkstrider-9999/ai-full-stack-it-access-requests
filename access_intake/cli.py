@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 from .exports import export_generation
+from .evaluation import prepare_evaluation, protect_export_destination, protect_intake_state
 from .intake import intake_jobs, resume_pending, retry_attempt
 from .prompts import EXTRACTION_INSTRUCTIONS, PROMPT_VERSION
 from .providers import MockProvider
@@ -20,19 +21,28 @@ from .storage import Store
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def _provider_arguments(command) -> None:
+    command.add_argument("--provider", choices=("mock", "openai"), default="mock")
+    command.add_argument("--model", help="Explicit Responses model ID; facilitator-key access remains unverified.")
+    command.add_argument("--endpoint", default=DEFAULT_ENDPOINT, help="Full HTTPS Responses API endpoint.")
+    command.add_argument("--timeout", type=float, default=60, help="Finite provider I/O timeout in seconds (default: 60).")
+    command.add_argument("--output-limit", type=int, default=4096, help="Maximum output tokens (default: 4096).")
+    command.add_argument("--temperature", type=float, help="Optional sampling temperature; omit for models that do not support it.")
+    command.add_argument("--mock-responses", type=Path, default=ROOT / "tests/mock_responses")
+    command.add_argument("--mock-script", type=Path, help="Saved JSON list of mock response actions, in sorted input order.")
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Prepare access requests for human review.")
     commands = parser.add_subparsers(dest="command", required=True)
     intake = commands.add_parser("intake", help="Process UTF-8 JSON exports into durable records.")
     intake.add_argument("input", type=Path)
-    intake.add_argument("--provider", choices=("mock", "openai"), default="mock")
-    intake.add_argument("--model", help="Explicit Responses model ID; facilitator-key access remains unverified.")
-    intake.add_argument("--endpoint", default=DEFAULT_ENDPOINT, help="Full HTTPS Responses API endpoint.")
-    intake.add_argument("--timeout", type=float, default=60, help="Finite provider I/O timeout in seconds (default: 60).")
-    intake.add_argument("--output-limit", type=int, default=4096, help="Maximum output tokens (default: 4096).")
-    intake.add_argument("--temperature", type=float, help="Optional sampling temperature; omit for models that do not support it.")
-    intake.add_argument("--mock-responses", type=Path, default=ROOT / "tests/mock_responses")
-    intake.add_argument("--mock-script", type=Path, help="Saved JSON list of mock response actions, in sorted input order.")
+    evaluation = commands.add_parser("evaluate-paraphrase", help="Evaluate one fresh-wording export in isolated state/output.",
+                                     description="Use separate evaluation state and output destinations. Mock results verify the fixture path, not real-model accuracy.")
+    evaluation.add_argument("--input", type=Path, required=True)
+    evaluation.add_argument("--output", type=Path, required=True)
+    for command in (intake, evaluation):
+        _provider_arguments(command)
     queue = commands.add_parser("queue", help="Inspect current completed/latest-failed results.")
     inspect = commands.add_parser("inspect", help="Inspect one current document.")
     history = commands.add_parser("history", help="Inspect archived attempts and source snapshots.")
@@ -48,10 +58,10 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--json", action="store_true", help="Print machine-readable JSON.")
     for command in (queue, inspect):
         command.add_argument("--include-pending", action="store_true", help="Show unfinished attempts and label earlier results.")
-    for command in (intake, resume):
+    for command in (intake, resume, evaluation):
         command.add_argument("--workers", type=int, default=4, help="Maximum concurrent provider calls (default: 4).")
         command.add_argument("--lease-seconds", type=float, default=60, help="Renewed worker lease; interrupted work is reclaimable after expiry.")
-    for command in (intake, queue, inspect, history, retry, resume, export):
+    for command in (intake, queue, inspect, history, retry, resume, export, evaluation):
         command.add_argument("--state", type=Path, required=True, help="Local SQLite database path.")
     return parser
 
@@ -119,9 +129,22 @@ def _configured_provider(configuration):
 def main(argv=None) -> int:
     arguments = _parser().parse_args(argv)
     try:
+        # Reject conflicting destinations before Store can initialize any files.
+        if arguments.command == "evaluate-paraphrase":
+            prepare_evaluation(arguments.input, arguments.state, arguments.output)
+            if arguments.provider == "mock" and arguments.mock_script is None:
+                # A transport default for the authored evaluation fixture;
+                # source loading/extraction/routing use the general path below.
+                arguments.mock_script = arguments.mock_responses / "manifest-paraphrase.json"
+        elif arguments.command == "intake":
+            protect_intake_state(arguments.state)
+        elif arguments.command == "export":
+            protect_export_destination(arguments.state, arguments.output)
         with Store(arguments.state) as store:
-            if arguments.command == "intake":
+            if arguments.command in ("intake", "evaluate-paraphrase"):
                 _intake(arguments, store)
+                if arguments.command == "evaluate-paraphrase":
+                    print(export_generation(store, arguments.output))
             elif arguments.command == "retry":
                 archived = store.attempt(arguments.attempt)
                 provider = _configured_provider(archived["configuration"])
