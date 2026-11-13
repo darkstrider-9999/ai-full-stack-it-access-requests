@@ -1,0 +1,7 @@
+continue working
+
+---
+
+<send_user_message_question_reply>
+[{"answer":"Needs-information; human clarification","question":"For Q-80, when a response passes the schema but contains unsupported facts or quotes absent from the source, what should happen? The plan requires preventing its use but leaves the outcome open.","questionItemId":"[\"request_user_input_async\",\"call_49f1567ad2284627ba23f0d3e6b257d3\",0]"}]
+</send_user_message_question_reply>
