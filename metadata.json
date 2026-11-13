@@ -1,0 +1,51 @@
+{
+  "cli_version": "0.13.2",
+  "checkpoint_id": "01M7AXDADQW14881J4EVBCAKTW",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "tests/mock_responses/it-001.json",
+    "tests/support/offline_guard.py",
+    "tests/support/sitecustomize.py",
+    "tests/test_00_offline_guard.py",
+    "tests/test_starter.py",
+    "tests/test_t01_mock_provider.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 26545,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 221184,
+    "output_tokens": 3857,
+    "api_call_count": 8
+  },
+  "redaction": {
+    "replacements": 0,
+    "layers": {
+      "betterleaks": 0,
+      "connection_string": 0,
+      "credential_key": 0,
+      "credential_value": 0,
+      "credentialed_uri": 0,
+      "entropy": 0,
+      "key_context": 0,
+      "pii": 0,
+      "provider_token": 0,
+      "shell_stdin": 0
+    },
+    "pii": {
+      "EMAIL": 0,
+      "IP": 0,
+      "PHONE": 0
+    }
+  }
+}
