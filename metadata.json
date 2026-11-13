@@ -1,0 +1,48 @@
+{
+  "cli_version": "0.13.2",
+  "checkpoint_id": "01M7AZFNB2B02W9KCGB2M6XTDK",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "tests/mock_responses/manifest-m20.json",
+    "tests/mock_responses/shared-request-id.json",
+    "tests/test_t05_durable_records.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 9853,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 639104,
+    "output_tokens": 6355,
+    "api_call_count": 5
+  },
+  "redaction": {
+    "replacements": 4,
+    "layers": {
+      "betterleaks": 0,
+      "connection_string": 0,
+      "credential_key": 0,
+      "credential_value": 0,
+      "credentialed_uri": 0,
+      "entropy": 4,
+      "key_context": 0,
+      "pii": 0,
+      "provider_token": 0,
+      "shell_stdin": 0
+    },
+    "pii": {
+      "EMAIL": 0,
+      "IP": 0,
+      "PHONE": 0
+    }
+  }
+}
